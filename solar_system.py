@@ -2,6 +2,8 @@ import pygame
 import sys
 
 from settings import Settings
+from sun import Sun
+from mercury import Mercury
 
 
 class SolarSystem:
@@ -19,15 +21,22 @@ class SolarSystem:
         self.caption = pygame.display.set_caption("Solar System")
         self.rect = self.screen.get_rect()
 
-    def main(self):
-        while True:
-            self.screen_config()
+        self.sun = Sun(self)
+        self.mercury = Mercury(self)
 
+    def main(self):
+
+        while True:
+
+            # Astronomical Objects
+            self.astro_objects()
+
+            self.screen_config()
             # user interaction
             self._key_pressed()
 
     def screen_config(self):
-        self.screen.fill(self.settings.screen_color)
+
         pygame.display.update()
 
     def _key_pressed(self):
@@ -37,6 +46,10 @@ class SolarSystem:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     sys.exit()
+
+    def astro_objects(self):
+        self.mercury.draw()
+        self.sun.draw()
 
 
 if __name__ == "__main__":

@@ -23,6 +23,12 @@ class Settings:
             self.diameter / self.merc_diameter)
         self.mercury_color = (128, 128, 128)
 
+        # Earth params
+        self.earth_diameter = 12756.3
+        self.earth_radius = self.sun_radius * 3 / \
+            (self.diameter / self.earth_diameter)
+        self.earth_color = (102, 127, 255)
+
         # Jupiter params
         self.jupiter_diameter = 142984.0
         self.jupiter_radius = self.sun_radius * 3 / \

@@ -5,6 +5,7 @@ from settings import Settings
 from sun import Sun
 from mercury import Mercury
 from jupiter import Jupiter
+from earth import Earth
 
 
 class SolarSystem:
@@ -25,10 +26,13 @@ class SolarSystem:
         self.sun = Sun(self)
         self.mercury = Mercury(self)
         self.jupiter = Jupiter(self)
+        self.earth = Earth(self)
 
     def main(self):
 
         while True:
+
+            self.screen.fill((0, 0, 0))
 
             # Astronomical Objects
             self.astro_objects()
@@ -53,6 +57,8 @@ class SolarSystem:
         self.mercury.draw()
         self.sun.draw()
         self.jupiter.draw()
+        self.earth.draw()
+        self.earth.move()
 
 
 if __name__ == "__main__":

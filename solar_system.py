@@ -4,6 +4,7 @@ import sys
 from settings import Settings
 from sun import Sun
 from mercury import Mercury
+from jupiter import Jupiter
 
 
 class SolarSystem:
@@ -23,6 +24,7 @@ class SolarSystem:
 
         self.sun = Sun(self)
         self.mercury = Mercury(self)
+        self.jupiter = Jupiter(self)
 
     def main(self):
 
@@ -50,6 +52,7 @@ class SolarSystem:
     def astro_objects(self):
         self.mercury.draw()
         self.sun.draw()
+        self.jupiter.draw()
 
 
 if __name__ == "__main__":
